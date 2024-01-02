@@ -1,0 +1,141 @@
+<!-- 
+<nav class="lg:px-16 px-6 bg-slate-200/40  shadow-md flex flex-row items-center justify-center lg:py-0 py-2 h-[80px]">
+    
+    <label for="menu-toggle" class="cursor-pointer lg:hidden block">
+      <svg
+        class="fill-current text-gray-900"
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+      >
+        <title>menu</title>
+        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+      </svg>
+    </label>
+    <input class="hidden" type="checkbox" id="menu-toggle" />
+    <div class="hidden lg:flex lg:items-center lg:w-auto w-full" id="menu">
+      <nav>
+        <ul class="text-xl text-center items-center lg:gap-20 pt-4 md:gap-x-4 lg:text-lg lg:flex  lg:pt-0">
+          <li class="py-2 lg:py-0 ">
+            <a
+              class="text-black font-medium hover:pb-4 hover:border-b-4 hover:border-yellow-400"
+              href="#"
+            >
+              Home
+            </a>
+          </li>
+          <li class="py-2 lg:py-0 ">
+            <a
+              class="text-black font-medium hover:pb-4 hover:border-b-4 hover:border-yellow-400"
+              href="#"
+            >
+             New Arrivals
+            </a>
+          </li>
+          <li class="py-2 lg:py-0 ">
+            <a
+              class="text-black font-medium hover:pb-4 hover:border-b-4 hover:border-yellow-400"
+              href="#"
+            >
+             Men
+            </a>
+          </li>
+          <li class="py-2 lg:py-0 ">
+            <a
+              class="text-black font-medium hover:pb-4 hover:border-b-4 hover:border-yellow-400"
+              href="#"
+            >
+            Women
+            </a>
+          </li>
+          <li class="py-2 lg:py-0 ">
+            <a
+              class="text-black font-medium hover:pb-4 hover:border-b-4 hover:border-yellow-400"
+              href="#"
+            >
+            Kids
+            </a>
+          </li>
+          <li class="py-2 lg:py-0 ">
+            <a
+              class="text-black font-medium hover:pb-4 hover:border-b-4 hover:border-yellow-400"
+              href="#"
+            >
+              About
+            </a>
+          </li>
+          <li class="py-2 lg:py-0 ">
+            <a
+              class="text-black font-medium hover:pb-4 hover:border-b-4 hover:border-yellow-400"
+              href="#"
+            >
+              wishlist
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </nav> -->
+
+
+  <div class="bg-white ">
+   
+    <nav class="fixed top-0 left-0 z-20 w-screen border-b border-gray-200 bg-white py-2.5 px-6 sm:px-4"> 
+     <div class="container mx-auto flex max-w-screen-2xl flex-wrap items-center justify-between">
+      <a href="#" class="flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mr-3 h-6 text-blue-500 sm:h-9">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+        </svg>
+  
+        <span class="self-center whitespace-nowrap text-xl font-semibold">Termcode</span>
+      </a>
+      <div class="mt-2 SM:mt-0 flex  items-center gap-5 MD:order-2 ">
+      <input class="w-[150px] h-8 bg-slate-200 rounded-md pl-4 " type="text" [(ngModel)]="searchTerm" (keyup)="search($event)"  placeholder="search " >
+        
+        <button routerLink="/cart" class="flex ">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+        </svg>
+        <span class="relative flex h-4 w-4 ">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-4 w-4 bg-red-500 justify-center items-center text-sm">{{tottalItem}}</span>
+        </span>
+      
+      </button>
+
+        <button *ngIf="isSmallScreen" (click)="toggleMenu()" type="button" class="inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 LG:hidden" aria-controls="navbar-sticky" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="h-6 w-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>     
+        </button>
+        <button routerLink="/login" type="button" class="rounde mr-3 border border-blue-700 py-1.5 px-6 text-center text-sm font-medium text-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 rounded-lg">Login</button>
+        <!-- <button  type="button" class="rounde mr-3 hidden bg-blue-700 py-1.5 px-6 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 md:mr-0 md:inline-block rounded-lg">Register</button> -->
+      </div>
+      <div  [class.hidden]="!isMenuOpen"  class="hidden w-full items-center justify-between MD:order-1 MD:flex MD:w-auto" id="navbar-sticky">
+        <ul class="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 MD:mt-0 MD:flex-row MD:space-x-8 MD:border-0 MD:bg-white MD:text-sm MD:font-medium">
+          <li>
+            <a href="#" class="block rounded bg-blue-700 py-2 pl-3 pr-4 text-white md:bg-transparent md:p-0 md:text-blue-700 LG:text-lg" aria-current="page">Home</a>
+          </li>
+          <li>
+            <a href="#" class="block rounded py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 LG:text-lg">New Arrivals</a>
+          </li>
+          <li>
+            <a href="#" class="block rounded py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 LG:text-lg">Men</a>
+          </li>
+          <li>
+            <a href="#" class="block rounded py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 LG:text-lg">Women</a>
+          </li>
+          <li>
+            <a href="#" class="block rounded py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 LG:text-lg">Gadgets</a>
+          </li>
+          <li>
+            <!-- <a href="#" class="block rounded py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 LG:text-lg">wishlist</a> -->
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+
+    
+</div>
